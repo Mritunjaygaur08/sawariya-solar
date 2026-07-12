@@ -1,7 +1,22 @@
-.next
-node_modules
-backend/.venv
+# Next.js
+.next/
+node_modules/
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Environment variables
 .env
 .env.local
+
+# Local database
+backend/dev.db
+
+# Logs
 *.log
+
+# OS files
 .DS_Store
+Thumbs.db
