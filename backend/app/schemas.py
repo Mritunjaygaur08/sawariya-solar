@@ -1,4 +1,5 @@
 from pydantic import BaseModel, EmailStr
+from pydantic import ConfigDict
 
 class LeadCreate(BaseModel):
     name: str
@@ -19,5 +20,5 @@ class LeadResponse(BaseModel):
     property_type: str
     message: str | None
 
-    class Config:
-        orm_mode = True
+class YourSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
