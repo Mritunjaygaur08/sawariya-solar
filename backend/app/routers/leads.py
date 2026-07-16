@@ -5,6 +5,7 @@ from sqlalchemy import insert, select
 from ..database import get_db
 from ..models.lead import Lead
 from ..schemas import LeadCreate, LeadResponse
+from ..utils.email import send_lead_notification
 
 router = APIRouter(prefix='/api')
 
@@ -22,6 +23,22 @@ async def submit_lead(lead: LeadCreate, db: AsyncSession = Depends(get_db)):
     result = await db.execute(query)
     await db.commit()
     created = result.scalar_one()
+
+    lead_payload = {
+        'name': created.name,
+        'email': created.email,
+        'phone': created.phone,
+        'address': created.address,
+        'monthly_bill': created.monthly_bill,
+        'property_type': created.property_type,
+        'message': created.message or ''
+    }
+
+    try:
+        send_lead_notification(lead_payload)
+    except Exception:
+        pass
+
     return created
 
 @router.get('/leads', response_model=list[LeadResponse])

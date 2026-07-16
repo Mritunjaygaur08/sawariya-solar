@@ -9,7 +9,7 @@ from .models.base import Base
 # Import models so SQLAlchemy registers them
 from .models import Lead, User, Admin
 
-from .routers import auth, health, leads, admin
+from .routers import auth, health, leads, admin, admin_stats
 
 
 @asynccontextmanager
@@ -54,3 +54,4 @@ app.include_router(health.router)
 app.include_router(leads.router)
 app.include_router(auth.router)
 app.include_router(admin.router)
+app.include_router(admin_stats.router)

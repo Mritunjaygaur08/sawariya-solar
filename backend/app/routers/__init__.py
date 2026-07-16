@@ -1,1 +1,1 @@
-from . import auth, health, leads, admin
+from . import auth, health, leads, admin, admin_stats
