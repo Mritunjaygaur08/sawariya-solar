@@ -92,7 +92,7 @@ export default function ContactSection() {
                   className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 text-sm font-semibold text-white transition hover:border-brand-blue/60"
                 >
                   <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h2l2 5-2 2 4 4 2-2 5 2v2h3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75a16.5 16.5 0 0015 15m0 0v-3a2.25 2.25 0 00-2.25-2.25h-1.5a.75.75 0 01-.75-.75v-2.25a.75.75 0 01.75-.75h3A2.25 2.25 0 0021 15.75v3m0 0L18 18" />
                   </svg>
                   Call now
                 </a>
